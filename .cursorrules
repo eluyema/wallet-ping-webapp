@@ -1,0 +1,110 @@
+# Cursor AI Rules for WalletPing Project
+
+## Documentation Rules
+
+### ❌ NEVER Create Summary/Info MD Files
+- Do NOT create: SETUP.md, CONTRIBUTING.md, PRODUCTION_READY.md, SEO_IMPROVEMENTS.md, GITHUB_READY.md, or any other summary/documentation MD files
+- Do NOT create multiple documentation files
+- ONLY update: README.md
+
+### ✅ Documentation Location
+- All project information, setup instructions, deployment guides, and documentation MUST be in README.md
+- Keep README.md comprehensive but organized
+- Use clear sections and headings in README.md
+
+## Security & Credentials Rules
+
+### ❌ NEVER Expose Sensitive Data
+- NEVER hardcode API keys in code or documentation
+- NEVER hardcode database credentials
+- NEVER commit .env or .env.local files
+- NEVER include actual credentials in examples
+
+### ✅ Credentials Management
+- ALL sensitive data MUST use environment variables
+- ALL credentials MUST be in .env.local (already in .gitignore)
+- ALWAYS use .env.example with placeholder values
+- ALWAYS verify .gitignore includes:
+  - .env
+  - .env*.local
+  - Any files with credentials
+
+### ✅ Safe Practices
+- Use placeholders like: `your_api_key_here`, `your_database_host`, `G-XXXXXXXXXX`
+- Reference environment variables in code: `process.env.VARIABLE_NAME`
+- Keep .env.example updated with required variables (no actual values)
+- Document required environment variables in README.md
+
+## Git Safety Rules
+
+### Cursor AI Responsibility
+- ✅ ALWAYS ensure .gitignore is properly configured
+- ✅ ALWAYS verify sensitive file patterns are in .gitignore
+- ✅ ALWAYS use environment variables for credentials
+- ❌ NOT responsible for checking current git state (staged files, commits)
+- ❌ NOT responsible for git history or already committed files
+- The user is responsible for their own git operations and history
+
+### .gitignore Configuration
+ALWAYS ensure these patterns are in .gitignore:
+1. .env
+2. .env*.local
+3. .env.local
+4. .env.production.local
+5. Any custom credential files
+6. But ALLOW .env.example (use !.env.example if needed)
+
+### Files That Must Never Be Committed
+- .env
+- .env.local
+- .env.production.local
+- Any file containing actual API keys
+- Any file containing database credentials
+- Any file with personal/sensitive information
+
+## Code Organization Rules
+
+### Environment Variables
+- Store in .env.local (development)
+- Store in hosting platform (production)
+- Never hardcode in source files
+- Always use process.env
+
+### Database
+- Use parameterized queries only (prevents SQL injection)
+- Never log database credentials
+- Use connection pooling
+
+### API Keys
+- Load from environment variables
+- Never expose to client-side
+- Keep server-side only
+
+## Quick Reference
+
+**Good:**
+```typescript
+const apiKey = process.env.ALCHEMY_API_KEY;
+```
+
+**Bad:**
+```typescript
+const apiKey = "sk_live_abc123xyz"; // NEVER DO THIS
+```
+
+**Good:**
+```md
+ALCHEMY_API_KEY=your_api_key_here
+```
+
+**Bad:**
+```md
+ALCHEMY_API_KEY=sk_live_abc123xyz789
+```
+
+## Summary
+- One README.md only for documentation
+- All credentials in .env.local
+- .gitignore protects sensitive files
+- Never commit secrets
+
