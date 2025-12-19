@@ -92,8 +92,8 @@ export default function WalletTracker({ initialData }: WalletTrackerProps) {
 
       {/* Big Status Banner */}
       <div className={`rounded-2xl border-2 p-10 ${getStatusColor(initialData.changeType)} backdrop-blur-sm relative overflow-hidden`}>
-        {/* Animated background gradient */}
-        <div className="absolute inset-0 bg-gradient-to-r opacity-10 animate-gradient" 
+        {/* Subtle background gradient */}
+        <div className="absolute inset-0 bg-gradient-to-r opacity-10" 
           style={{
             backgroundImage: initialData.changeType === 'up' 
               ? 'linear-gradient(90deg, rgba(16,185,129,0.2), rgba(5,150,105,0.2))' 

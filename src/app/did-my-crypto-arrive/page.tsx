@@ -26,7 +26,7 @@ export default function DidMyCryptoArrivePage() {
 
       <Header />
       
-      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <main className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Hero Section */}
         <div className="text-center mb-16 animate-fadeIn">
           <div className="inline-block mb-4">
@@ -334,7 +334,7 @@ export default function DidMyCryptoArrivePage() {
           </div>
           <p>© 2025 WalletPing. Simple crypto wallet tracking for Ethereum.</p>
         </footer>
-      </div>
+      </main>
     </div>
   );
 }

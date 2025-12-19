@@ -13,7 +13,7 @@ export default function PrivacyPolicyPage() {
     <div className="min-h-screen bg-gradient-to-br from-gray-950 via-blue-950/20 to-gray-950">
       <Header />
       
-      <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <main className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="bg-gray-900/50 backdrop-blur-sm border border-gray-800/50 rounded-2xl p-8 sm:p-12">
           <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4">Privacy Policy</h1>
           <p className="text-gray-400 mb-8">Last updated: {lastUpdated}</p>
@@ -233,7 +233,7 @@ export default function PrivacyPolicyPage() {
             </Link>
           </div>
         </div>
-      </div>
+      </main>
     </div>
   );
 }

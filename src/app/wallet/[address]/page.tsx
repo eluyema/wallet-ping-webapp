@@ -92,7 +92,7 @@ export default async function WalletPage({ params }: Props) {
         </div>
       </header>
       
-      <div className="relative py-8 px-4 sm:px-6 lg:px-8">
+      <main className="relative py-8 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           <div className="mb-6">
             <a
@@ -108,7 +108,7 @@ export default async function WalletPage({ params }: Props) {
           
           <WalletTracker initialData={trackingData} />
         </div>
-      </div>
+      </main>
     </div>
   );
 }

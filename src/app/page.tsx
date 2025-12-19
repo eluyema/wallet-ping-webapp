@@ -23,7 +23,7 @@ export default function Home() {
 
         <Header />
       
-      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <main className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Hero Section */}
         <div className="text-center mb-16 animate-fadeIn">
           <h1 className="text-6xl sm:text-7xl font-bold mb-6 bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent leading-tight pb-2">
@@ -323,7 +323,7 @@ export default function Home() {
           </div>
           <p>© 2025 WalletPing. Track your crypto with calm.</p>
         </footer>
-        </div>
+        </main>
       </div>
     </>
   );

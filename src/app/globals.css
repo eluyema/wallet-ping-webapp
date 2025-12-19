@@ -79,22 +79,19 @@ body {
   animation: pulseGlow 2s ease-in-out infinite;
 }
 
-/* Gradient animation */
+/* Gradient animation - smooth background shift */
 @keyframes gradientShift {
-  0% {
+  0%, 100% {
     background-position: 0% 50%;
   }
   50% {
     background-position: 100% 50%;
   }
-  100% {
-    background-position: 0% 50%;
-  }
 }
 
 .animate-gradient {
   background-size: 200% 200%;
-  animation: gradientShift 8s ease infinite;
+  animation: gradientShift 15s ease-in-out infinite;
 }
 
 /* Ping Wave Animations - Radar/WiFi style ripples */
