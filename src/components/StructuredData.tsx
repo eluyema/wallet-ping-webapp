@@ -38,7 +38,12 @@ export default function StructuredData() {
     '@type': 'Organization',
     name: 'WalletPing',
     url: 'https://walletping.io',
-    logo: 'https://walletping.io/logo.png',
+    logo: {
+      '@type': 'ImageObject',
+      url: 'https://walletping.io/app-icon.png',
+      width: 512,
+      height: 512,
+    },
     contactPoint: {
       '@type': 'ContactPoint',
       email: 'support@walletping.io',
