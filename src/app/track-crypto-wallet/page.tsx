@@ -30,8 +30,16 @@ export default function TrackCryptoWalletPage() {
         {/* Hero Section */}
         <div className="text-center mb-16 animate-fadeIn">
           <div className="inline-block mb-4">
-            <span className="px-4 py-2 bg-gradient-to-r from-blue-500/20 to-purple-500/20 border border-blue-500/30 rounded-full text-sm text-blue-300 font-medium">
-              Action-Oriented Guide
+            <span className="px-4 py-2 bg-gradient-to-r from-blue-500/20 to-purple-500/20 border border-blue-500/30 rounded-full text-sm text-blue-300 font-medium flex items-center gap-2">
+              <svg className="w-4 h-4" viewBox="0 0 1535 2500" fill="currentColor">
+                <path d="M767.5 0L767 2.1V1710.7L767.5 1711.2L1535 1255.9L767.5 0Z" opacity="0.6"/>
+                <path d="M767.5 0L0 1255.9L767.5 1711.2V915.6V0Z"/>
+                <path d="M767.5 1854.9L767.2 1855.3V2446.2L767.5 2500L1535 1399.7L767.5 1854.9Z" opacity="0.6"/>
+                <path d="M767.5 2500V1854.9L0 1399.7L767.5 2500Z"/>
+                <path d="M767.5 1711.2L1535 1255.9L767.5 915.6V1711.2Z" opacity="0.2"/>
+                <path d="M0 1255.9L767.5 1711.2V915.6L0 1255.9Z" opacity="0.6"/>
+              </svg>
+              Ethereum Tracking Guide
             </span>
           </div>
           <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-cyan-400 to-teal-400 bg-clip-text text-transparent leading-tight pb-2">
@@ -40,8 +48,11 @@ export default function TrackCryptoWalletPage() {
           <p className="text-xl sm:text-2xl text-gray-300 mb-4 max-w-3xl mx-auto leading-relaxed">
             Three simple steps to start tracking your Ethereum wallet
           </p>
-          <p className="text-lg text-gray-400 mb-10 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-400 mb-6 max-w-2xl mx-auto">
             <strong className="text-cyan-400">Paste → Track → See changes</strong>
+          </p>
+          <p className="text-sm text-gray-500 mb-10">
+            Currently supports Ethereum (ETH) • More chains coming soon
           </p>
         </div>
 

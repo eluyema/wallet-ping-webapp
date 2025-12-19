@@ -7,8 +7,8 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'WalletPing - Stop Wasting Time Refreshing Block Explorers',
-  description: 'Stop refreshing Etherscan every 5 minutes. Track your Ethereum wallet balance changes with peace of mind. Simple wallet monitoring that shows what matters: did your crypto arrive?',
-  keywords: 'crypto wallet tracker, ethereum tracker, wallet monitor, track crypto wallet, check wallet balance, waiting for crypto, did my crypto arrive, ethereum balance tracker, stop refreshing etherscan',
+  description: 'Stop manually checking your wallet balance. Track your Ethereum wallet balance changes with peace of mind. Simple wallet monitoring that shows what matters: did your crypto arrive?',
+  keywords: 'crypto wallet tracker, ethereum tracker, wallet monitor, track crypto wallet, check wallet balance, waiting for crypto, did my crypto arrive, ethereum balance tracker, wallet balance monitor',
 };
 
 export default function Home() {
@@ -26,14 +26,30 @@ export default function Home() {
       <main className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Hero Section */}
         <div className="text-center mb-16 animate-fadeIn">
+          <div className="inline-block mb-4">
+            <span className="px-4 py-2 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border border-cyan-500/30 rounded-full text-sm text-cyan-300 font-medium flex items-center gap-2">
+              <svg className="w-4 h-4" viewBox="0 0 1535 2500" fill="currentColor">
+                <path d="M767.5 0L767 2.1V1710.7L767.5 1711.2L1535 1255.9L767.5 0Z" opacity="0.6"/>
+                <path d="M767.5 0L0 1255.9L767.5 1711.2V915.6V0Z"/>
+                <path d="M767.5 1854.9L767.2 1855.3V2446.2L767.5 2500L1535 1399.7L767.5 1854.9Z" opacity="0.6"/>
+                <path d="M767.5 2500V1854.9L0 1399.7L767.5 2500Z"/>
+                <path d="M767.5 1711.2L1535 1255.9L767.5 915.6V1711.2Z" opacity="0.2"/>
+                <path d="M0 1255.9L767.5 1711.2V915.6L0 1255.9Z" opacity="0.6"/>
+              </svg>
+              Ethereum Wallet Tracker
+            </span>
+          </div>
           <h1 className="text-6xl sm:text-7xl font-bold mb-6 bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent leading-tight pb-2">
             WalletPing
           </h1>
           <p className="text-2xl text-gray-300 mb-3 max-w-2xl mx-auto font-light">
-            Stop wasting time refreshing explorers
+            Stop manually checking your wallet balance
           </p>
-          <p className="text-lg text-gray-400 mb-8 max-w-2xl mx-auto">
-            Get peace of mind, not noise. Know instantly when your wallet balance changes.
+          <p className="text-lg text-gray-400 mb-6 max-w-2xl mx-auto">
+            Get peace of mind, not noise. Know instantly when your Ethereum wallet balance changes.
+          </p>
+          <p className="text-sm text-gray-500 mb-8">
+            Supports Ethereum (ETH) addresses • More chains coming soon
           </p>
           <div className="mb-6">
             <WalletInput />
@@ -255,7 +271,7 @@ export default function Home() {
               </div>
               <h3 className="text-lg font-semibold text-white mb-2">Waiting for a payment</h3>
               <p className="text-sm text-gray-400">
-                Stop refreshing Etherscan every 5 minutes. Bookmark and check when you're ready.
+                Stop refreshing block explorers every 5 minutes. Bookmark and check when you're ready.
               </p>
             </div>
             <div className="bg-gradient-to-br from-emerald-500/5 to-green-500/5 backdrop-blur-sm rounded-xl border border-emerald-500/20 p-6">

@@ -37,18 +37,30 @@ export default function WalletInput() {
     <form onSubmit={handleSubmit} className="w-full max-w-2xl mx-auto">
       <div className="flex flex-col gap-3">
         <div className="flex flex-col sm:flex-row gap-3 justify-center">
-          <input
-            type="text"
-            name="wallet-address"
-            value={address}
-            onChange={(e) => setAddress(e.target.value)}
-            placeholder="Paste your wallet address..."
-            autoComplete="on"
-            autoCorrect="off"
-            autoCapitalize="off"
-            spellCheck="false"
-            className="flex-1 px-5 py-4 bg-gray-900/50 backdrop-blur-sm border border-gray-700 rounded-xl focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 outline-none text-base font-mono text-white placeholder-gray-500 transition-all duration-300"
-          />
+          <div className="relative flex-1">
+            <div className="absolute left-4 top-1/2 -translate-y-1/2 pointer-events-none">
+              <svg className="w-5 h-5 text-purple-400" viewBox="0 0 1535 2500" fill="currentColor">
+                <path d="M767.5 0L767 2.1V1710.7L767.5 1711.2L1535 1255.9L767.5 0Z" opacity="0.6"/>
+                <path d="M767.5 0L0 1255.9L767.5 1711.2V915.6V0Z"/>
+                <path d="M767.5 1854.9L767.2 1855.3V2446.2L767.5 2500L1535 1399.7L767.5 1854.9Z" opacity="0.6"/>
+                <path d="M767.5 2500V1854.9L0 1399.7L767.5 2500Z"/>
+                <path d="M767.5 1711.2L1535 1255.9L767.5 915.6V1711.2Z" opacity="0.2"/>
+                <path d="M0 1255.9L767.5 1711.2V915.6L0 1255.9Z" opacity="0.6"/>
+              </svg>
+            </div>
+            <input
+              type="text"
+              name="wallet-address"
+              value={address}
+              onChange={(e) => setAddress(e.target.value)}
+              placeholder="Enter Ethereum (ETH) wallet address..."
+              autoComplete="on"
+              autoCorrect="off"
+              autoCapitalize="off"
+              spellCheck="false"
+              className="w-full pl-12 pr-5 py-4 bg-gray-900/50 backdrop-blur-sm border border-gray-700 rounded-xl focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 outline-none text-base font-mono text-white placeholder-gray-500 transition-all duration-300"
+            />
+          </div>
           <div className="relative">
             <button
               type="submit"
