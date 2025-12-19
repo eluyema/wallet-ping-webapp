@@ -7,16 +7,35 @@ A beautiful, modern crypto wallet tracker built with Next.js, featuring real-tim
 
 ## Features
 
+### Core Functionality
 - ✅ **Real Ethereum Data** - Fetches actual balances from the blockchain via Alchemy
-- ✅ **Dark Theme** - Modern, elegant dark UI with glassmorphism effects
-- ✅ **Animated Interface** - Subtle animations and ping effects
+- ✅ **Smart Caching** - 1-minute cache to reduce API calls and improve speed
 - ✅ **Persistent Tracking** - Stores historical snapshots in PostgreSQL
 - ✅ **Change Detection** - Automatically detects balance increases/decreases
-- ✅ **Timeline View** - See last 10 balance snapshots
+- ✅ **Timeline View** - See last 10 balance snapshots with relative timestamps
+- ✅ **24-Hour Context** - Shows balance change over the past 24 hours
+
+### User Experience
+- ✅ **First-Time UX** - Special message for initial snapshot tracking
+- ✅ **Relative Timestamps** - "5 minutes ago" format for easy scanning
+- ✅ **Data Freshness Indicators** - Clear "Last fetched X minutes ago" labels
+- ✅ **Help Icons** - Contextual tooltips to explain tracking logic
+- ✅ **Coming Soon Teaser** - Notification feature preview to set expectations
+- ✅ **Ping Wave Animation** - Satisfying animation when starting to track
+- ✅ **Native Autocomplete** - Input remembers previous wallet addresses
+
+### Design & Performance
+- ✅ **Dark Theme** - Modern, elegant dark UI with glassmorphism effects
+- ✅ **Animated Interface** - Subtle animations and smooth transitions
+- ✅ **Benefit-Oriented Copy** - Focus on user problems and solutions
 - ✅ **Rate Limiting** - 30 requests per minute per IP
+
+### SEO & Analytics
+- ✅ **Google Analytics** - G-4GVCS0B9BS tracking integrated
+- ✅ **Advanced SEO** - Sitemap.xml, robots.txt, structured data (JSON-LD)
+- ✅ **5 SEO Landing Pages** - Targeting different user intents
+- ✅ **Open Graph & Twitter Cards** - Rich social media previews
 - ✅ **Legal Pages** - Privacy Policy and Terms of Service
-- ✅ **Google Analytics** - Anonymous usage tracking
-- ✅ **SEO Optimized** - Multiple landing pages with proper metadata
 
 ## Quick Start
 
@@ -45,8 +64,8 @@ DB_NAME=your_database_name
 DB_USER=your_database_user
 DB_PASSWORD=your_database_password
 
-# Optional (for production)
-NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX
+# Analytics (required for production)
+NEXT_PUBLIC_GA_ID=G-4GVCS0B9BS
 ```
 
 **Where to get credentials:**

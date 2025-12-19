@@ -6,9 +6,9 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'WalletPing - Simple Crypto Wallet Tracker for Ethereum',
-  description: 'Track your Ethereum wallet balance changes without the noise. Simple, calm crypto tracking. See instantly if your balance increased, decreased, or stayed the same.',
-  keywords: 'crypto wallet tracker, ethereum tracker, wallet monitor, crypto balance, track ethereum wallet',
+  title: 'WalletPing - Stop Wasting Time Refreshing Block Explorers',
+  description: 'Stop refreshing Etherscan every 5 minutes. Track your Ethereum wallet balance changes with peace of mind. Simple wallet monitoring that shows what matters: did your crypto arrive?',
+  keywords: 'crypto wallet tracker, ethereum tracker, wallet monitor, track crypto wallet, check wallet balance, waiting for crypto, did my crypto arrive, ethereum balance tracker, stop refreshing etherscan',
 };
 
 export default function Home() {
@@ -30,10 +30,10 @@ export default function Home() {
             WalletPing
           </h1>
           <p className="text-2xl text-gray-300 mb-3 max-w-2xl mx-auto font-light">
-            Track your crypto, stay calm
+            Stop wasting time refreshing explorers
           </p>
           <p className="text-lg text-gray-400 mb-8 max-w-2xl mx-auto">
-            Know when your wallet balance changes — no noise, no stress, just clarity
+            Get peace of mind, not noise. Know instantly when your wallet balance changes.
           </p>
           <div className="mb-6">
             <WalletInput />
@@ -64,10 +64,10 @@ export default function Home() {
                 </svg>
               </div>
               <h3 className="text-xl font-semibold text-white mb-2">
-                Clear Status
+                Instant Clarity
               </h3>
               <p className="text-gray-400">
-                See if your balance increased, decreased, or stayed the same at a glance
+                Stop wondering "did something change?" — see your balance status instantly
               </p>
             </div>
 
@@ -84,10 +84,10 @@ export default function Home() {
                 </svg>
               </div>
               <h3 className="text-xl font-semibold text-white mb-2">
-                Current Balance
+                No More Manual Refreshing
               </h3>
               <p className="text-gray-400">
-                Your exact balance in ETH, updated every time you check
+                Bookmark once, check anytime. Your balance history is always waiting for you.
               </p>
             </div>
 
@@ -98,10 +98,10 @@ export default function Home() {
                 </svg>
               </div>
               <h3 className="text-xl font-semibold text-white mb-2">
-                Recent Timeline
+                Peace of Mind
               </h3>
               <p className="text-gray-400">
-                View the last 10 snapshots to see your balance history
+                Stop obsessively checking. See your balance history at a glance — no anxiety.
               </p>
             </div>
           </div>
@@ -176,6 +176,140 @@ export default function Home() {
             <div className="bg-red-500/10 backdrop-blur-sm text-red-300 border-2 border-red-500/30 rounded-xl p-6 text-center hover:border-red-500/50 transition-all duration-300 shadow-md shadow-red-500/20">
               <p className="text-lg font-semibold mb-2">Balance decreased by -0.12 ETH</p>
               <p className="text-sm text-red-400">Your balance went down</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Why Different From Block Explorers */}
+        <div className="mb-16 bg-gray-900/30 backdrop-blur-sm rounded-2xl border border-gray-800/50 p-10">
+          <h2 className="text-3xl font-bold text-white text-center mb-8">
+            Why tracking is different from checking
+          </h2>
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <div className="space-y-4">
+              <h3 className="text-xl font-semibold text-red-400 flex items-center gap-2">
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+                Block Explorers
+              </h3>
+              <ul className="space-y-3 text-gray-400">
+                <li className="flex items-start gap-2">
+                  <span className="text-red-400 mt-1">•</span>
+                  <span>Show raw transaction data and technical details</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-red-400 mt-1">•</span>
+                  <span>Require constant manual refreshing</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-red-400 mt-1">•</span>
+                  <span>No context about changes over time</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-red-400 mt-1">•</span>
+                  <span>Overwhelming for simple "did it arrive?" questions</span>
+                </li>
+              </ul>
+            </div>
+            <div className="space-y-4">
+              <h3 className="text-xl font-semibold text-emerald-400 flex items-center gap-2">
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                </svg>
+                WalletPing Tracking
+              </h3>
+              <ul className="space-y-3 text-gray-400">
+                <li className="flex items-start gap-2">
+                  <span className="text-emerald-400 mt-1">•</span>
+                  <span>Shows simple: increased, decreased, or unchanged</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-emerald-400 mt-1">•</span>
+                  <span>Bookmark once, check anytime</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-emerald-400 mt-1">•</span>
+                  <span>Clear history of balance snapshots</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-emerald-400 mt-1">•</span>
+                  <span>Designed for peace of mind, not data overload</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        {/* Use Cases */}
+        <div className="mb-16">
+          <h2 className="text-3xl font-bold text-white text-center mb-8">
+            When to use WalletPing
+          </h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="bg-gradient-to-br from-blue-500/5 to-cyan-500/5 backdrop-blur-sm rounded-xl border border-blue-500/20 p-6">
+              <div className="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center mb-4">
+                <svg className="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <h3 className="text-lg font-semibold text-white mb-2">Waiting for a payment</h3>
+              <p className="text-sm text-gray-400">
+                Stop refreshing Etherscan every 5 minutes. Bookmark and check when you're ready.
+              </p>
+            </div>
+            <div className="bg-gradient-to-br from-emerald-500/5 to-green-500/5 backdrop-blur-sm rounded-xl border border-emerald-500/20 p-6">
+              <div className="w-12 h-12 bg-emerald-500/20 rounded-lg flex items-center justify-center mb-4">
+                <svg className="w-6 h-6 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <h3 className="text-lg font-semibold text-white mb-2">Monitoring wallet activity</h3>
+              <p className="text-sm text-gray-400">
+                Track a wallet you care about without diving into transaction logs.
+              </p>
+            </div>
+            <div className="bg-gradient-to-br from-purple-500/5 to-pink-500/5 backdrop-blur-sm rounded-xl border border-purple-500/20 p-6">
+              <div className="w-12 h-12 bg-purple-500/20 rounded-lg flex items-center justify-center mb-4">
+                <svg className="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+              </div>
+              <h3 className="text-lg font-semibold text-white mb-2">Confirming a transfer</h3>
+              <p className="text-sm text-gray-400">
+                Did your withdrawal arrive? One glance tells you yes or no.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* SEO Content Section */}
+        <div className="mb-16 max-w-3xl mx-auto prose prose-invert">
+          <div className="bg-gray-900/30 backdrop-blur-sm rounded-xl border border-gray-800/50 p-8 space-y-6 text-gray-300">
+            <div>
+              <h2 className="text-2xl font-bold text-white mb-3">Simple Crypto Wallet Tracking for Everyone</h2>
+              <p className="text-base leading-relaxed">
+                Whether you're waiting for funds to arrive, monitoring a payment, or just want to know if something changed in your Ethereum wallet, WalletPing gives you instant clarity without the overwhelming details of traditional block explorers.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-xl font-semibold text-white mb-2">How Wallet Tracking Works</h3>
+              <p className="text-base leading-relaxed">
+                Unlike block explorers that show every transaction detail, WalletPing focuses on what matters most: did your balance change? Each time you check your tracked wallet, we take a snapshot and compare it to previous checks. This gives you a clean timeline of balance changes without the noise.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-xl font-semibold text-white mb-2">Built for Peace of Mind</h3>
+              <p className="text-base leading-relaxed">
+                We know the anxiety of waiting for crypto to arrive. That's why WalletPing is designed to be calm and clear. No complex dashboards, no confusing metrics — just simple tracking that tells you what you need to know. Bookmark your wallet page and check back anytime for instant status updates.
+              </p>
+            </div>
+            <div className="pt-4 border-t border-gray-700">
+              <p className="text-sm text-gray-400">
+                <Link href="/crypto-wallet-tracker" className="text-cyan-400 hover:text-cyan-300 font-medium">
+                  Learn more about crypto wallet tracking →
+                </Link>
+              </p>
             </div>
           </div>
         </div>

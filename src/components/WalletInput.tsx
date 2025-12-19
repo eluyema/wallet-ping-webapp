@@ -47,7 +47,7 @@ export default function WalletInput() {
             autoCorrect="off"
             autoCapitalize="off"
             spellCheck="false"
-            className="flex-1 px-5 py-4 bg-gray-900/50 backdrop-blur-sm border border-gray-700 rounded-xl focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 outline-none text-sm font-mono text-white placeholder-gray-500 transition-all duration-300"
+            className="flex-1 px-5 py-4 bg-gray-900/50 backdrop-blur-sm border border-gray-700 rounded-xl focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 outline-none text-base font-mono text-white placeholder-gray-500 transition-all duration-300"
           />
           <div className="relative">
             <button

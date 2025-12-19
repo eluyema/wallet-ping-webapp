@@ -44,17 +44,17 @@ export function formatDelta(delta: number): string {
 }
 
 // Get human-readable status message
-export function getStatusMessage(changeType: ChangeType, delta: number): string {
+export function getStatusMessage(changeType: ChangeType, delta: number, isFirstSnapshot?: boolean): string {
   switch (changeType) {
     case 'started':
-      return 'Tracking started';
+      return isFirstSnapshot ? 'Tracking started — this is your first snapshot' : 'Tracking started';
     case 'up':
       return `Balance increased by ${formatDelta(delta)} ETH`;
     case 'down':
       return `Balance decreased by ${formatDelta(Math.abs(delta))} ETH`;
     case 'none':
     default:
-      return 'No changes detected';
+      return 'Balance unchanged since last check';
   }
 }
 

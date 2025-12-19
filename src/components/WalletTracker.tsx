@@ -30,10 +30,30 @@ export default function WalletTracker({ initialData }: WalletTrackerProps) {
     const seconds = Math.floor((new Date().getTime() - new Date(date).getTime()) / 1000);
     
     if (seconds < 60) return 'just now';
-    if (seconds < 3600) return `${Math.floor(seconds / 60)}m ago`;
-    if (seconds < 86400) return `${Math.floor(seconds / 3600)}h ago`;
-    return `${Math.floor(seconds / 86400)}d ago`;
+    if (seconds < 120) return '1 minute ago';
+    if (seconds < 3600) return `${Math.floor(seconds / 60)} minutes ago`;
+    if (seconds < 7200) return '1 hour ago';
+    if (seconds < 86400) return `${Math.floor(seconds / 3600)} hours ago`;
+    if (seconds < 172800) return '1 day ago';
+    return `${Math.floor(seconds / 86400)} days ago`;
   };
+
+  const get24HourChange = () => {
+    const now = new Date();
+    const oneDayAgo = new Date(now.getTime() - 24 * 60 * 60 * 1000);
+    
+    // Find the first snapshot older than 24 hours
+    const oldSnapshot = initialData.snapshots
+      .slice()
+      .reverse()
+      .find(s => new Date(s.timestamp) <= oneDayAgo);
+    
+    if (!oldSnapshot) return null;
+    
+    return initialData.currentBalance - oldSnapshot.balance;
+  };
+
+  const isFirstSnapshot = initialData.snapshots.length === 1;
 
   return (
     <div className="w-full max-w-4xl mx-auto space-y-6 animate-fadeIn">
@@ -84,19 +104,32 @@ export default function WalletTracker({ initialData }: WalletTrackerProps) {
         />
         <div className="text-center relative z-10">
           <h2 className="text-4xl font-bold mb-3">
-            {getStatusMessage(initialData.changeType, initialData.deltaSincePrev)}
+            {getStatusMessage(initialData.changeType, initialData.deltaSincePrev, isFirstSnapshot)}
           </h2>
           <p className="text-sm opacity-75 flex items-center justify-center gap-2">
             <span className="inline-block w-2 h-2 rounded-full bg-current animate-pulse"></span>
-            {formatTimeAgo(initialData.lastCheckedAt)}
+            Last fetched {formatTimeAgo(initialData.lastCheckedAt)}
+          </p>
+          <p className="text-xs opacity-60 mt-1">
+            {formatDate(initialData.lastCheckedAt)}
           </p>
         </div>
       </div>
 
       {/* Change Summary */}
-      {initialData.changeType !== 'started' && (
+      {initialData.changeType !== 'started' && !isFirstSnapshot && (
         <div className="bg-gray-900/50 backdrop-blur-sm rounded-2xl border border-gray-800/50 p-6">
-          <h3 className="text-sm font-medium text-gray-400 mb-2">Change since previous check</h3>
+          <h3 className="text-sm font-medium text-gray-400 mb-2 flex items-center gap-2">
+            Change since previous snapshot
+            <span className="group relative">
+              <svg className="w-4 h-4 text-gray-500 cursor-help" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span className="invisible group-hover:visible absolute left-6 top-0 w-64 bg-gray-800 text-gray-200 text-xs rounded-lg p-3 shadow-lg border border-gray-700 z-10">
+                We compare the current balance to the last time this page was checked. This is different from blockchain transactions.
+              </span>
+            </span>
+          </h3>
           <p className={`text-3xl font-bold flex items-center gap-2 ${
             initialData.deltaSincePrev > 0 ? 'text-emerald-400' : 
             initialData.deltaSincePrev < 0 ? 'text-red-400' : 
@@ -113,6 +146,23 @@ export default function WalletTracker({ initialData }: WalletTrackerProps) {
               </svg>
             )}
             {formatDelta(initialData.deltaSincePrev)} ETH
+          </p>
+        </div>
+      )}
+
+      {/* 24 Hour Context */}
+      {get24HourChange() !== null && (
+        <div className="bg-blue-500/5 backdrop-blur-sm rounded-2xl border border-blue-500/20 p-6">
+          <h3 className="text-sm font-medium text-blue-300 mb-2">Past 24 hours</h3>
+          <p className={`text-2xl font-semibold ${
+            get24HourChange()! > 0 ? 'text-emerald-400' : 
+            get24HourChange()! < 0 ? 'text-red-400' : 
+            'text-gray-400'
+          }`}>
+            {get24HourChange()! === 0 
+              ? 'No change in the past 24 hours' 
+              : `${formatDelta(get24HourChange()!)} ETH change`
+            }
           </p>
         </div>
       )}
@@ -202,7 +252,7 @@ export default function WalletTracker({ initialData }: WalletTrackerProps) {
                   {formatBalance(snapshot.balance)} ETH
                 </p>
                 <p className="text-xs text-gray-500 mt-1">
-                  {formatDate(snapshot.timestamp)}
+                  {formatTimeAgo(snapshot.timestamp)} · {formatDate(snapshot.timestamp)}
                 </p>
               </div>
               <div className="text-right">
@@ -225,6 +275,17 @@ export default function WalletTracker({ initialData }: WalletTrackerProps) {
             </div>
           ))}
         </div>
+      </div>
+
+      {/* Coming Soon Teaser */}
+      <div className="bg-gradient-to-br from-purple-500/10 via-pink-500/10 to-purple-500/10 backdrop-blur-sm rounded-2xl border border-purple-500/30 p-8 text-center">
+        <div className="inline-block px-4 py-1 bg-purple-500/20 text-purple-300 text-xs font-semibold rounded-full mb-4 border border-purple-500/30">
+          COMING SOON
+        </div>
+        <h3 className="text-2xl font-semibold text-white mb-3">Get Notified Automatically</h3>
+        <p className="text-base text-gray-300 max-w-md mx-auto">
+          Soon you'll be able to receive email or SMS notifications when your wallet balance changes. No more manual checking!
+        </p>
       </div>
 
       {/* Soft CTA */}
